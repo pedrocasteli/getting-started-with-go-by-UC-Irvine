@@ -59,4 +59,39 @@ To access the value inside that particular address, we use "\*":
 fmt.Println(*ptr)
 ```
 
-We can only use both operators in pointer variables. Other types only accept "&" to get the address.
+We can only use both operators in **pointer variables**. Other types only accept "&" to get the address.
+
+## Basic data types
+
+### Arrays
+
+Fixed-length series of elements of a chosen type. If not specified, elements are initialized to zero value.
+
+```
+var array [5]int
+```
+
+We can also declare them as **array literals**, with pre-defined values:
+
+```
+var x = [5]int{1, 2, 3, 4, 5}
+y := [...]int{1, 9, 37}
+```
+
+### Slices
+
+It's a "window" on an **underlying array**. They have a variable size, up to the whole array.
+
+```
+var arr = [...]int{1, 2, 3, 4, 5, 6}
+s1 := arr[0:2]
+s2 := arr[1:3]
+```
+
+Slices can overlap.
+`len()` function returns the length, while `cap()` function returns the capacity.
+Just like with arrays, we can declare slices as **slice literals**:
+
+```
+sli := []int{1, 2, 3}
+```
